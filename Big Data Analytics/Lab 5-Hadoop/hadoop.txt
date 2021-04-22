@@ -1,0 +1,87 @@
+hduser@ahmedali-virtual-machine:/$ cd /usr/local/hadoop/sbin
+hduser@ahmedali-virtual-machine:/usr/local/hadoop/sbin$ ./start-df.sh
+bash: ./start-df.sh: No such file or directory
+hduser@ahmedali-virtual-machine:/usr/local/hadoop/sbin$ ./start-dfs.sh
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:14:43 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+hduser@localhost's password: 
+localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-ahmedali-virtual-machine.out
+hduser@localhost's password: 
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-ahmedali-virtual-machine.out
+Starting secondary namenodes [0.0.0.0]
+hduser@0.0.0.0's password: 
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hduser-secondarynamenode-ahmedali-virtual-machine.out
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:15:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@ahmedali-virtual-machine:/usr/local/hadoop/sbin$ ./start-yarn.sh
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hduser-resourcemanager-ahmedali-virtual-machine.out
+hduser@localhost's password: 
+localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hduser-nodemanager-ahmedali-virtual-machine.out
+hduser@ahmedali-virtual-machine:/usr/local/hadoop/sbin$ jps
+13745 SecondaryNameNode
+13890 ResourceManager
+14211 NodeManager
+14342 Jps
+13352 NameNode
+13550 DataNode
+hduser@ahmedali-virtual-machine:/usr/local/hadoop/sbin$ cd..
+cd..: command not found
+hduser@ahmedali-virtual-machine:/usr/local/hadoop/sbin$ cd ..
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fd -ls
+Error: Could not find or load main class fd
+Caused by: java.lang.ClassNotFoundException: fd
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fd -ls /
+Error: Could not find or load main class fd
+Caused by: java.lang.ClassNotFoundException: fd
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fs -ls /
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:25:18 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fs -mkdir /humans
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:26:28 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fs -copyFromLocal /home/ahmedali/Desktop/file1.txt /humans/test.txt
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:27:42 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop jar /home/ahmedali/Desktop/WordCount.jar wordcount.WordCount  /humans/test.txt  /output/
+Not a valid JAR: /home/ahmedali/Desktop/WordCount.jar
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop jar /home/ahmedali/Desktop/WordCount.jar wordcount.WordCount  /humans/test.txt  /output/
+Not a valid JAR: /home/ahmedali/Desktop/WordCount.jar
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fs -cat /out/part-00000
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:35:13 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+cat: `/out/part-00000': No such file or directory
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ hadoop fs -ls /out/
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/usr/local/hadoop/share/hadoop/common/lib/hadoop-auth-2.6.0.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/04/22 20:36:05 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ls: `/out/': No such file or directory
+hduser@ahmedali-virtual-machine:/usr/local/hadoop$ 
